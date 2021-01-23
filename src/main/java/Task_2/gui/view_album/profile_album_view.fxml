@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Task_2.gui.view_album.ProfileAlbumViewController">
+    <ScrollPane fx:id="mainScrollPane" prefHeight="${mainPane.height}" prefWidth="${mainPane.width}">
+        <content>
+            <FlowPane fx:id="imagesFlowPane" hgap="30.0" prefWidth="${mainScrollPane.width - 4}" vgap="30.0" />
+        </content>
+    </ScrollPane>
+</Pane>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Task_2.gui.view_album.UserAlbumViewController">
+    <ScrollPane fx:id="mainScrollPane" prefHeight="${mainPane.height}" prefWidth="${mainPane.width}">
+        <content>
+            <FlowPane fx:id="imagesFlowPane" hgap="30.0" prefWidth="${mainScrollPane.width - 4}" vgap="30.0">
+            <children>
+               <VBox fx:id="defaultVBox" alignment="CENTER" prefHeight="${imagesFlowPane.height}" prefWidth="${imagesFlowPane.width}">
+                  <children>
+                     <Label text="Нет фото">
+                        <font>
+                           <Font size="30.0" />
+                        </font>
+                     </Label>
+                  </children></VBox>
+            </children></FlowPane>
+        </content>
+    </ScrollPane>
+</Pane>

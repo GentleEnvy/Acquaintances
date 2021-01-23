@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Task_2.gui.search_user.SearchController">
+    <columnConstraints>
+        <ColumnConstraints percentWidth="30.0" />
+        <ColumnConstraints percentWidth="70.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints percentHeight="100" />
+    </rowConstraints>
+    <children>
+        <GridPane alignment="CENTER" GridPane.columnIndex="1">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="10" />
+                <RowConstraints percentHeight="90" />
+            </rowConstraints>
+            <children>
+                <FlowPane alignment="CENTER">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#addUserEvent" text="Добавить пользоваля">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </FlowPane>
+                <ScrollPane fx:id="usersScrollPane" GridPane.rowIndex="1">
+                    <content>
+                        <VBox fx:id="usersVBox" alignment="TOP_CENTER" prefWidth="${usersScrollPane.width - 3}" />
+                    </content>
+                </ScrollPane>
+            </children>
+        </GridPane>
+        <VBox alignment="TOP_CENTER" spacing="20" style="-fx-border-color: black;">
+            <children>
+                <VBox alignment="TOP_CENTER" spacing="10">
+                    <children>
+                        <Label text="Фильтры поиска" textOverrun="CENTER_ELLIPSIS" underline="true">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER" spacing="50.0">
+                            <children>
+                                <RadioButton fx:id="allRadioButton" onAction="#update" text="all">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="searchTypeToggleGroup" />
+                                    </toggleGroup>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="anyRadioButton" onAction="#update" selected="true" text="any">
+                                    <toggleGroup>
+                                        <fx:reference source="searchTypeToggleGroup" />
+                                    </toggleGroup>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </HBox>
+                        <TextField fx:id="idTextField" onKeyReleased="#update" promptText="Id">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="lastNameTextField" onKeyReleased="#update" promptText="Фамилия">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="firstNameTextField" onKeyReleased="#update" promptText="Имя">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </TextField>
+                        <TextField fx:id="patronymicTextField" onKeyReleased="#update" promptText="Отчество">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </TextField>
+                        <VBox alignment="CENTER" spacing="5.0">
+                            <children>
+                                <Label text="Возраст">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <HBox spacing="30.0">
+                                    <children>
+                                        <TextField fx:id="fromTextField" onKeyReleased="#update" promptText="от">
+                                            <font>
+                                                <Font size="17.0" />
+                                            </font>
+                                        </TextField>
+                                        <TextField fx:id="beforeTextField" onKeyReleased="#update" promptText="до">
+                                            <font>
+                                                <Font size="17.0" />
+                                            </font>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER" spacing="50.0">
+                            <children>
+                                <RadioButton fx:id="maleRadioButton" text="Мужчина">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="genderToggleGroup" />
+                                    </toggleGroup>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </RadioButton>
+                                <RadioButton fx:id="femaleRadioButton" text="Женщина">
+                                    <toggleGroup>
+                                        <fx:reference source="genderToggleGroup" />
+                                    </toggleGroup>
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </RadioButton>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox fx:id="interestsVBox" alignment="CENTER" />
+                <VBox fx:id="relationsVBox" />
+            </children>
+        </VBox>
+    </children>
+</GridPane>
